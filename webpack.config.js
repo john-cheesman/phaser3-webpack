@@ -1,6 +1,8 @@
 const path = require('path')
+const webpack = require('webpack')
+const env = process.env.NODE_ENV
 
-module.exports = {
+let config = {
     entry: './src/index.js',
     devtool: 'source-map',
     output: {
@@ -16,6 +18,13 @@ module.exports = {
                 exclude: /node_modules/
             }
         ]
-    }
+    },
+    plugins: []
 }
+
+if (env === 'production') {
+    config.plugins.push(new webpack.optimize.UglifyJsPlugin())
+}
+
+module.exports = config
 
