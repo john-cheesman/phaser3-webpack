@@ -19,7 +19,12 @@ let config = {
             }
         ]
     },
-    plugins: []
+    plugins: [
+        new webpack.DefinePlugin({  
+            'CANVAS_RENDERER': JSON.stringify(true),
+            'WEBGL_RENDERER': JSON.stringify(true)
+        })
+    ]
 }
 
 if (env === 'production') {
