@@ -1,4 +1,5 @@
 import 'phaser'
+import Player from '../objects/player'
 
 export default class Game extends Phaser.Scene {
     constructor() {
@@ -9,6 +10,7 @@ export default class Game extends Phaser.Scene {
 
     create() {
         console.log('game started')
+
+        let player = new Player(this, 0, 0)
     }
 }
-
