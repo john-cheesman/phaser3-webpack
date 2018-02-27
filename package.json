@@ -4,11 +4,11 @@
   "description": "A basic Phaser 3 starter project",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --env.production=false",
+    "build": "webpack",
     "build:production": "webpack --env.production",
     "clean": "rimraf dist/bundle.js",
     "watch": "webpack --watch",
-    "serve": "webpack-dev-server --env.production=false"
+    "serve": "webpack-dev-server"
   },
   "keywords": [
     "phaser",

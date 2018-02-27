@@ -2,8 +2,6 @@ const path = require('path')
 const webpack = require('webpack')
 
 module.exports = env => {
-    console.log(env.production)
-
     return {
         entry: {
             main: './src/index.js'
@@ -13,7 +11,7 @@ module.exports = env => {
             path: path.join(__dirname, 'dist'),
             publicPath: "/"
         },
-        mode: env.production ? 'production' : 'development',
+        mode: env && env.production ? 'production' : 'development',
         module: {
             rules: [
                 {
