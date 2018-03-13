@@ -8,7 +8,7 @@
     "build:production": "webpack --env.production",
     "clean": "rimraf dist/bundle.js",
     "watch": "webpack --watch",
-    "serve": "webpack-dev-server"
+    "serve": "webpack-dev-server --hot"
   },
   "keywords": [
     "phaser",
