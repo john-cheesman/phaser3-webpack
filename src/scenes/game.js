@@ -1,3 +1,4 @@
+import 'phaser'
 import Player from '../objects/player'
 
 export default class Game extends Phaser.Scene {

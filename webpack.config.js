@@ -4,10 +4,11 @@ const webpack = require('webpack')
 module.exports = env => {
     return {
         entry: {
-            main: './src/index.js'
+            app: './src/index.js',
+            vendor: ['phaser']
         },
         output: {
-            filename: 'bundle.js',
+            filename: '[name].bundle.js',
             path: path.join(__dirname, 'dist'),
             publicPath: "/"
         },
@@ -38,7 +39,21 @@ module.exports = env => {
                 'CANVAS_RENDERER': JSON.stringify(true),
                 'WEBGL_RENDERER': JSON.stringify(true)
             })
-        ]
+        ],
+        optimization: {
+            runtimeChunk: false,
+            splitChunks: {
+                cacheGroups: {
+                    default: false,
+                    commons: {
+                        test: /[\\/]node_modules[\\/]/,
+                        name: 'vendor',
+                        chunks: 'all',
+                        minChunks: 2
+                    }
+                }
+            }
+          }
     }
 }
 
