@@ -1,7 +1,7 @@
-import 'phaser'
+import { Scene } from 'phaser'
 import Player from '../objects/player'
 
-export default class Game extends Phaser.Scene {
+export default class Game extends Scene {
     constructor() {
         super('game')
     }
