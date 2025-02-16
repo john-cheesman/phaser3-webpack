@@ -1,4 +1,6 @@
 node_modules
-dist
+dist/*.js
+dist/*.map.js
+dist/*LICENSE.txt
 npm-debug.log
 *.swp
